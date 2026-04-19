@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<article class="project-page">
+  {% if page.hero_image %}
+  <div class="project-hero" style="background-image: url('{{ page.hero_image | relative_url }}');"></div>
+  {% endif %}
+  <div class="project-body">
+    <header class="project-header">
+      <p class="project-category">{{ page.category }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.role or page.company %}
+      <dl class="project-meta">
+        {% if page.role %}<dt>Role</dt><dd>{{ page.role }}</dd>{% endif %}
+        {% if page.company %}<dt>Company</dt><dd>{{ page.company }}</dd>{% endif %}
+        {% if page.year %}<dt>Year</dt><dd>{{ page.year }}</dd>{% endif %}
+      </dl>
+      {% endif %}
+    </header>
+
+    {% if page.vimeo_id %}
+    <div class="video-embed">
+      <iframe src="https://player.vimeo.com/video/{{ page.vimeo_id }}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    {% elsif page.youtube_id %}
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/{{ page.youtube_id }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+
+    <div class="project-content">
+      {{ content }}
+    </div>
+
+    <a href="{{ '/' | relative_url }}#work" class="back-link">← Back to work</a>
+  </div>
+</article>

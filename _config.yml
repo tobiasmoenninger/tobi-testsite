@@ -1,0 +1,52 @@
+title: Tobias Moenninger
+tagline: Visual Effects Supervisor
+description: >-
+  Visual Effects Supervisor and Compositing Artist. Feature films,
+  series, and commercials.
+author: Tobias Moenninger
+email: your@email.com
+url: "https://tobiasmoenninger.com"
+
+# Social
+social:
+  linkedin: https://www.linkedin.com/in/tobias-moenninger-93302b60
+  imdb: https://www.imdb.com/name/nm4087091/
+  instagram: https://www.instagram.com/tobias.moenninger/
+
+# Formspree endpoint for contact form — replace with your own after signup
+formspree_id: "your-formspree-id"
+
+# Build
+markdown: kramdown
+permalink: /blog/:title/
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+collections:
+  projects:
+    output: true
+    permalink: /project/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md

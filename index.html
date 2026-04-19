@@ -1,0 +1,59 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-kicker">Visual Effects Supervisor</p>
+    <h1 class="hero-title">Tobias<br>Moenninger</h1>
+    <p class="hero-sub">Feature films, episodic series, and commercials — <br>built frame by frame.</p>
+    <a href="#work" class="hero-cta">View work →</a>
+  </div>
+</section>
+
+<section id="work" class="work-section">
+  <header class="section-header">
+    <h2>Selected Work</h2>
+    <p>Supervision and compositing across features, series, and commercials.</p>
+  </header>
+
+  <div class="project-grid">
+    {% assign sorted_projects = site.projects | sort: "year" | reverse %}
+    {% for project in sorted_projects limit: 9 %}
+    <a href="{{ project.url | relative_url }}" class="project-card">
+      <div class="project-card-image" style="background-image: url('{{ project.thumbnail | relative_url }}');"></div>
+      <div class="project-card-body">
+        <p class="project-card-category">{{ project.category }}</p>
+        <h3 class="project-card-title">{{ project.title }}</h3>
+        {% if project.role %}<p class="project-card-role">{{ project.role }}</p>{% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <div class="section-cta">
+    <a href="{{ '/portfolio/' | relative_url }}" class="btn">View full portfolio</a>
+  </div>
+</section>
+
+<section class="reel-section">
+  <header class="section-header">
+    <h2>Compositing Reel</h2>
+  </header>
+  <div class="video-embed">
+    <!-- Replace with your actual Vimeo/YouTube ID -->
+    <iframe src="https://player.vimeo.com/video/000000000" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="about-teaser">
+  <div class="about-teaser-inner">
+    <h2>About</h2>
+    <p>
+      Based in Germany, working internationally. Started in post-production in 2009
+      and have since worked on projects ranging from independent features to large-scale
+      streaming series at studios including Animal Logic, RISE, and more.
+    </p>
+    <a href="{{ '/about/' | relative_url }}" class="btn btn-ghost">Read more</a>
+  </div>
+</section>

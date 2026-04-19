@@ -1,0 +1,35 @@
+---
+layout: default
+title: Portfolio
+permalink: /portfolio/
+---
+<section class="page-section">
+  <div class="page-inner">
+    <header class="page-header">
+      <p class="page-kicker">Portfolio</p>
+      <h1>All Work</h1>
+    </header>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Supervision">Supervision</button>
+      <button class="filter-btn" data-filter="Compositing">Compositing</button>
+      <button class="filter-btn" data-filter="Commercial">Commercial</button>
+      <button class="filter-btn" data-filter="Cinematography">Cinematography</button>
+    </div>
+
+    <div class="project-grid full">
+      {% assign sorted_projects = site.projects | sort: "year" | reverse %}
+      {% for project in sorted_projects %}
+      <a href="{{ project.url | relative_url }}" class="project-card" data-category="{{ project.category }}">
+        <div class="project-card-image" style="background-image: url('{{ project.thumbnail | relative_url }}');"></div>
+        <div class="project-card-body">
+          <p class="project-card-category">{{ project.category }}</p>
+          <h3 class="project-card-title">{{ project.title }}</h3>
+          {% if project.role %}<p class="project-card-role">{{ project.role }}</p>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
