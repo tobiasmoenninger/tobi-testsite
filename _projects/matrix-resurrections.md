@@ -1,12 +1,10 @@
 ---
 title: The Matrix Resurrections
 category: Compositing
-role: Compositing Artist
-company: Animal Logic Sydney
+role: Compositing / Post-Vis Artist
+company: inHouse VFX
 year: 2021
 thumbnail: /assets/images/matrix-resurrections.jpg
-hero_image: /assets/images/matrix-resurrections-hero.jpg
-# vimeo_id: 123456789
 ---
 
 Compositing work on *The Matrix Resurrections* at Animal Logic Sydney.

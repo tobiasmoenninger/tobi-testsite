@@ -9,3 +9,5 @@ Gemfile.lock
 Thumbs.db
 node_modules/
 README.md
+HANDOFF.md
+.claude/settings.local.json
